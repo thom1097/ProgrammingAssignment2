@@ -7,8 +7,7 @@
 ##                      and sets iv to null
 ##                  2)get <- returns the matrix x
 ##                  3) setmatrixiv sets the iv in the parent environment using 
-##                      dummy 
-##                    argument parentmatrixiv
+##                      dummy argument parentmatrixiv
 ##                  4)getmatrixiv returns the matrix inverse
 ## LIST- creates a list of the functions in makeCacheMatrix enabling them to be 
 ## used by cacheSolve
@@ -30,12 +29,13 @@ makeCacheMatrix <- function(x = matrix()) {
 
 ## Cachesolve function 
 ##  1- uses getmatrix function to return the inverse from the parent environment
-##  2- uses an if loop to identify if the returned object is an inverse or NULL,
+##  2- uses an if statement to identify if the returned object is an inverse or 
+##    NULL,
 ##        if inverse it will display a message and eventually return an inverse 
 ##        matrix
 ##        if NULL the function accesses the matrix x, creates its inverse matrix 
-##        using solve(x) and returns the matrix.
-
+##        using solve(x), sends the matrix inverse to the cache as iv and prints
+##        the inverse matrix to the console.
 cacheSolve <- function(x, ...) {
         ## Return a matrix that is the inverse of 'x'
           iv <- x$getmatrixiv()
